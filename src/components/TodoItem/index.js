@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodoContext } from "../../context/todo/todoContext";
 
-export const TodoItem = ({ text, id, done }) => {
+export const TodoItem = ({ text, id }) => {
+  const { removeTodo } = useContext(TodoContext);
   return (
     <li id={id}>
-      <label>
-        <input type="checkbox" checked={done} />
-        <span>{text}</span>
-        <button onClick={() => {}}>X</button>
-      </label>
+      <span>{text}</span>
+      <button onClick={() => removeTodo(id)}>X</button>
     </li>
   );
 };

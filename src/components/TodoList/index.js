@@ -10,7 +10,7 @@ export const TodoList = ({ todos }) => {
 
   return (
     <div className="todo-list">
-      <ul>Todos</ul>
+      <ul>{renderTodo(todos)}</ul>
     </div>
   );
 };

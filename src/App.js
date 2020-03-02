@@ -1,11 +1,14 @@
 import React from "react";
 import { TodoPage } from "./pages/TodoPage";
+import { TodoState } from "./context/todo/TodoState";
 
 function App() {
   return (
-    <div className="App">
-      <TodoPage />
-    </div>
+    <TodoState>
+      <div className="App">
+        <TodoPage />
+      </div>
+    </TodoState>
   );
 }
 
