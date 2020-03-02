@@ -1,33 +1,12 @@
-import React, { useContext } from "react";
-import { Context } from "../context";
+import React from "react";
 
 export const TodoItem = ({ text, id, done }) => {
-  const { dispatch } = useContext(Context);
-
   return (
     <li id={id}>
       <label>
-        <input
-          type="checkbox"
-          checked={done}
-          onChange={() =>
-            dispatch({
-              type: "toggle",
-              payload: id
-            })
-          }
-        />
+        <input type="checkbox" checked={done} />
         <span>{text}</span>
-        <button
-          onClick={() =>
-            dispatch({
-              type: "remove",
-              payload: id
-            })
-          }
-        >
-          X
-        </button>
+        <button onClick={() => {}}>X</button>
       </label>
     </li>
   );
